@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Pretty Girlfriend 💖</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&display=swap');
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #fce4ec, #e8f5e9); /* dreamy pink to green garden */
+    height: 100vh;
+    font-family: 'Pacifico', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    color: #ffb6c1;
+    text-align: center;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    color: #d81b60;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+
+  .btn {
+    padding: 15px 30px;
+    margin: 20px;
+    font-size: 1.2em;
+    font-family: 'Pacifico', cursive;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #ffb6c1;
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    transform: scale(1.1);
+  }
+
+  #garden {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Cherry blossom petals */
+  .petal {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: pink;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<h1>For my pretty girlfriend, the one and only girl in my life — <br>Mrs. PUJANA DOBAL JEU, urf Puju Don.</h1>
+<h2>Would you be my Valentine?</h2>
+
+<div>
+  <button class="btn" id="yesBtn" onclick="goToLetter()">Yes 💖</button>
+  <button class="btn" id="noBtn">No 😢</button>
+</div>
+
+<div id="garden"></div>
+
+<script>
+  // Generate falling petals
+  const garden = document.getElementById('garden');
+  for(let i=0; i<50; i++){
+    let petal = document.createElement('div');
+    petal.classList.add('petal');
+    petal.style.left = Math.random() * window.innerWidth + 'px';
+    petal.style.animationDuration = (5 + Math.random() * 5) + 's';
+    petal.style.animationDelay = Math.random() * 5 + 's';
+    garden.appendChild(petal);
+  }
+
+  // No button floating away
+  const noBtn = document.getElementById('noBtn');
+  noBtn.addEventListener('mouseenter', () => {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.position = 'absolute';
+    noBtn.style.left = x + 'px';
+    noBtn.style.top = y + 'px';
+  });
+
+  // Go to love letter page
+  function goToLetter() {
+    window.location.href = 'loveletter.html';
+  }
+</script>
+</body>
+</html>

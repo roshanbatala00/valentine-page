@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Letter 💌</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Patrick+Hand&display=swap');
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #fce4ec, #e8f5e9);
+    font-family: 'Patrick Hand', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  .letter {
+    background: #fff8dc;
+    width: 80%;
+    max-width: 700px;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    position: relative;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    color: #4a2c2a;
+  }
+
+  .letter h1 {
+    text-align: center;
+    color: #d81b60;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+
+  .photo {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    display: inline-block;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .photos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  input[type="file"] {
+    display: block;
+    margin: 20px auto;
+  }
+</style>
+</head>
+<body>
+
+<div class="letter">
+  <h1>HAPPY VALENTINE’S DAY, MERI PYARI 💗</h1>
+  <p>Dear Pujana,</p>
+  <p>Once again, Happy Valentine’s Day, my love — meri pukuli, meri budi jeu. 🌷<br>
+  You carry a tiny spark of anger sometimes, but when that spark turns into a storm, it can lift Sagarmatha itself. Yet even then, you remain the most beautiful soul — pure, rare, and flawless, without a single doubt.</p>
+  
+  <p>And me? I know I am stubborn, foolish, and far from perfect. But for you, my love, I have never held back even a single drop of effort. I speak too much when emotions overflow, but I swear on my heart — whether I laugh or cry, every word I say is soaked in love for you.</p>
+
+  <p>I love you… endlessly, hopelessly, madly. 💗💗💗💗💗💗💗💗💗</p>
+
+  <p>No matter how flawed my habits may be, I am learning, changing, becoming better — for you, and for us. Because now, my life has only one destination: you.<br>
+  I want to marry you, build a small world together, fill it with laughter, dreams, and tiny footsteps of our future children. You and me, working side by side, holding hands through every storm, making a warm home out of love and patience.</p>
+
+  <p>And listen to me, my brave girl — do not burden your heart with too much pressure. I see your struggle, your late nights, your silent tears, and your unstoppable effort. And I swear, I am so damn proud of you. You are stronger than you realize, braver than you believe, and brighter than you know.</p>
+
+  <p>Your dreams are not in vain. Every step you take is building the life you deserve. One day, all your pain will bloom into success, and I will be standing beside you, applauding the loudest.</p>
+
+  <p>Forget the noise of the world. You are more than enough.<br>
+  You are my peace, my chaos, my dream, my home.<br>
+  You are my entire universe wrapped in a single heartbeat.</p>
+
+  <p>And till my last breath fades into silence, I promise —<br>
+  I will love you. Always. Only you. Forever.</p>
+
+  <p style="text-align:center; font-size:1.5em; color:#d81b60;">I LOVE YOU INFINITELY. 💖🌸</p>
+
+  <div class="photos-container" id="photos"></div>
+  <input type="file" accept="image/*" multiple onchange="addPhotos(event)">
+</div>
+
+<script>
+  function addPhotos(event) {
+    const files = event.target.files;
+    const container = document.getElementById('photos');
+    for(let i=0; i<files.length; i++){
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.classList.add('photo');
+        container.appendChild(img);
+      }
+      reader.readAsDataURL(files[i]);
+    }
+  }
+</script>
+
+</body>
+</html>
